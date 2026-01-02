@@ -19,11 +19,6 @@ export default function Home() {
         <TopRedSemicircle />
         <TopGradientTrapezoid />
         <NumberArcGroup />
-
-        {/* rest of hero */}
-        <div className="flex min-h-screen items-center justify-center">
-          <h1 className="text-4xl font-bold">Hero Content</h1>
-        </div>
       </section>
     </main>
   );
