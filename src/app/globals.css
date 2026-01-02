@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Akira Expanded';
+  src: url('/AkiraExpanded-SuperBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Amanojaku Demo';
+  src: url('/Amanojaku Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-amanojaku {
+  font-family: "Amanojaku Demo", sans-serif;
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

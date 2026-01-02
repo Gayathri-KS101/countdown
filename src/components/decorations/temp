@@ -1,0 +1,26 @@
+      {/* Minutes */}
+      <NumberArc
+        value={time.minutes}
+        max={60}
+        count={getArcCount(width, "minutes")}
+        radiusX="clamp(120px, 18vw, 180px)"
+        radiusY="clamp(94px, 14vw, 150px)"
+      />
+
+      {/* Hours */}
+      <NumberArc
+        value={time.hours}
+        max={24}
+        count={getArcCount(width, "hours")}
+        radiusX="clamp(150px, 22vw, 230px)"
+        radiusY="clamp(120px, 18vw, 190px)"
+      />
+
+      {/* Days */}
+      <NumberArc
+        value={time.days}
+        max={366}
+        count={getArcCount(width, "days")}
+        radiusX="clamp(185px, 26vw, 290px)"
+        radiusY="clamp(150px, 22vw, 240px)"
+      />
