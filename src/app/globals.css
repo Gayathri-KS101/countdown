@@ -20,6 +20,9 @@
   font-family: "Amanojaku Demo", sans-serif;
 }
 
+.font-akira {
+  font-family: "Akira Expanded", sans-serif;
+}
 
 :root {
   --background: #ffffff;
@@ -45,3 +48,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Desktop-only horizontal widening */
+@media (min-width: 1024px) {
+  .double-ellipse-ring {
+    transform: translateX(-50%) scaleX(1.25);
+  }
+}
+
+/* Mobile / tablet = no stretch */
+.double-ellipse-ring {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.masked-ellipse-lines {
+  transform: translateX(-50%);
+}
+
+/* Large screens only */
+@media (min-width: 1024px) {
+  .masked-ellipse-lines {
+    transform: translateX(-50%) scaleX(1.35);
+  }
+}
+

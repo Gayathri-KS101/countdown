@@ -7,6 +7,7 @@ type NumberArcProps = {
   arcRotation?: number;
   maxAngle?: number;
   label?: string;
+  labelOffset?: string;
   topOffset?: string;
   fontScale?: number;
 };
@@ -20,18 +21,18 @@ export default function NumberArc({
   arcRotation = 0,
   maxAngle = 180,
     label,
+    labelOffset,
     topOffset,
     fontScale = 1,
 }: NumberArcProps) {
   const centerIndex = Math.floor(count / 2);
-
   const numbers = Array.from({ length: count }, (_, i) => {
     let v = value + (i - centerIndex);
     if (v < 0) v += max;
     if (v >= max) v -= max;
     return v;
   });
-  const centerFont = `clamp(${14 * fontScale}px, ${2 * fontScale}vw, ${32 * fontScale}px)`;
+  const centerFont = `clamp(${12 * fontScale}px, ${1.6 * fontScale}vw, ${26 * fontScale}px)`;
   const sideFont = `clamp(${12 * fontScale}px, ${1.6 * fontScale}vw, ${26 * fontScale}px)`;
 
 
@@ -68,7 +69,7 @@ export default function NumberArc({
             transition-colors
             ${
                 isCenter
-                ? "text-[#C20C19] text-[clamp(14px,1.2vw,20px)]"
+                ? "text-[#C20C19] text-[clamp(12px,1vw,16px)]"
                 : "text-[#78777C] text-[clamp(12px,1vw,16px)]"
             }
             `}
@@ -81,21 +82,22 @@ export default function NumberArc({
 
         {/* Label */}
         {isCenter && label && (
-            <div
+        <div
             className="
-                mt-[4px]
-                text-center
-                font-amanojaku
-                text-[#C20C19]
-                tracking-wide
+            text-center
+            font-amanojaku
+            text-[#C20C19]
+            tracking-wide
             "
             style={{
-              fontSize: `clamp(${10 * fontScale}px, ${1.2 * fontScale}vw, ${16 * fontScale}px)`,
+            marginTop: `calc(clamp(6px, 1.2vw, 12px) + ${labelOffset ?? "0px"})`,
+            fontSize: `clamp(${8 * fontScale}px, ${1.2 * fontScale}vw, ${14 * fontScale}px)`,
             }}
-            >
+        >
             {label}
-            </div>
+        </div>
         )}
+
         </div>
         );
       })}

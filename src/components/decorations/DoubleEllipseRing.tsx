@@ -15,32 +15,35 @@ export default function DoubleEllipseRing({
 }: Props) {
   return (
     <div
-      className="pointer-events-none fixed left-1/2 -translate-x-1/2"
-      style={{
-        // Responsive top: shows ~40% of ellipse on mobile, ~35% on desktop
-        // Mobile: -(320px * 0.6) = -192px equivalent
-        // Desktop: -(620px * 0.65) = -403px equivalent  
-        top: "clamp(-400px, -45vw, -250px)",
-        width: "clamp(400px, 70vw, 620px)",
-        height: "clamp(400px, 70vw, 620px)",
-        zIndex,
-      }}
-    >
+  className="pointer-events-none fixed left-1/2 double-ellipse-ring"
+  style={{
+    top: "clamp(-1000px, -52vw, -280px)",
+    width: "clamp(400px, 70vw, 1100px)",
+    height: "clamp(400px, 70vw, 980px)",
+    transform: "translateX(-50%)",
+    zIndex,
+  }}
+>
+
       {/* Outer ring */}
       <div
-        className="absolute inset-0 rounded-full"
-        style={{ border: "2px solid #78777C" }}
+        className="absolute inset-0"
+        style={{ 
+          border: "2.5px solid #78777C",
+          borderRadius: "50%"
+        }}
       />
 
       {/* Inner ring */}
       <div
-        className="absolute rounded-full"
+        className="absolute"
         style={{
           top: gap,
           left: gap,
           right: gap,
           bottom: gap,
-          border: "2px solid #78777C",
+          border: "2.5px solid #78777C",
+          borderRadius: "50%"
         }}
       />
     </div>

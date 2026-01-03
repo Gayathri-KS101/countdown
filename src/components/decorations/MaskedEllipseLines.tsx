@@ -3,29 +3,26 @@
 import { useEffect, useState } from "react";
 
 export default function MaskedEllipseLines() {
-  const SIZE = 880;
+  const SIZE = 820;
   const R_INNER = 380;
-  const R_OUTER = 400;
-  const LINE_COUNT = 160;
-
+  const R_OUTER = 395;
+  const LINE_COUNT = 270;
   const CENTER = SIZE / 2;
 
   const [isFastRotation, setIsFastRotation] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsFastRotation(false);
-    }, 2700);
+    const timer = setTimeout(() => setIsFastRotation(false), 2700);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div
-      className="pointer-events-none absolute left-1/2 -translate-x-1/2 overflow-hidden"
+      className="pointer-events-none absolute left-1/2 masked-ellipse-lines overflow-hidden"
       style={{
-        width: "clamp(1100px, 180vw, 2000px)",
-        height: "clamp(550px, 90vw, 1000px)",
-        top: "clamp(-570px, -57vw, -280px)",
+        width: "clamp(900px, 180vw, 2400px)",
+        height: "clamp(550px, 90vw, 1100px)",
+        top: "clamp(-790px, -61vw, -350px)",
         zIndex: 5,
       }}
     >
@@ -48,27 +45,34 @@ export default function MaskedEllipseLines() {
 
           {Array.from({ length: LINE_COUNT }).map((_, i) => {
             const angle = (i / LINE_COUNT) * Math.PI * 2;
-
-            const x1 = CENTER + R_INNER * Math.cos(angle);
-            const y1 = CENTER + R_INNER * Math.sin(angle);
-            const x2 = CENTER + R_OUTER * Math.cos(angle);
-            const y2 = CENTER + R_OUTER * Math.sin(angle);
+            const pinX = CENTER + R_OUTER * Math.cos(angle);
+            const pinY = CENTER + R_OUTER * Math.sin(angle);
 
             return (
-              <line
+              <rect
                 key={i}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                stroke="rgba(70,70,75,0.8)"
-                strokeWidth="4"
-                strokeLinecap="round"
+                x={-1.5}
+                y={-6}
+                width={3}
+                height={12}
+                transform={`translate(${pinX}, ${pinY}) rotate(${(angle * 180) / Math.PI + 90})`}
+                fill="rgba(40,40,40,0.8)"
               />
             );
           })}
         </g>
       </svg>
+      <style>{`
+        .masked-ellipse-lines {
+          transform: translateX(-50%);
+        }
+
+        @media (min-width: 1024px) {
+          .masked-ellipse-lines {
+            transform: translateX(-50%) scaleX(1.2);
+          }
+        }
+      `}</style>
     </div>
   );
 }
