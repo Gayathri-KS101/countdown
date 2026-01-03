@@ -18,7 +18,8 @@ type NumberArcProps = {
 
 const ROTATION_AMOUNT = 30; // degrees to rotate on hover
 const EASE_STRENGTH = 0.12; // spring easing (0.1-0.15 recommended)
-const TOUCH_DISABLED = true; // disable on touch devices
+const SWIPE_THRESHOLD = 50; // minimum swipe distance in px
+const SWIPE_ROTATION_SCALE = 0.3; // degrees per pixel of swipe
 
 export default function NumberArc({
   radiusX,
@@ -38,18 +39,31 @@ export default function NumberArc({
   const animationRef = useRef<number | null>(null);
   const targetOffsetRef = useRef(0);
   const currentOffsetRef = useRef(0);
+  
+  // Touch tracking
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+  const swipeOffsetRef = useRef(0);
+  const isDraggingRef = useRef(false);
   // Animation loop with spring easing
   useEffect(() => {
     const animate = () => {
-      targetOffsetRef.current = isHovered ? ROTATION_AMOUNT : 0;
-      currentOffsetRef.current +=
-        (targetOffsetRef.current - currentOffsetRef.current) * EASE_STRENGTH;
-
-      setAngleOffset(currentOffsetRef.current);
-
-      // Continue animating if not fully settled
-      if (Math.abs(targetOffsetRef.current - currentOffsetRef.current) > 0.01) {
+      if (isDraggingRef.current) {
+        // During drag, directly follow the swipe offset (no easing)
+        currentOffsetRef.current = swipeOffsetRef.current;
+        setAngleOffset(swipeOffsetRef.current);
         animationRef.current = requestAnimationFrame(animate);
+      } else {
+        // On hover or release, spring back smoothly
+        targetOffsetRef.current = isHovered ? ROTATION_AMOUNT : 0;
+        currentOffsetRef.current +=
+          (targetOffsetRef.current - currentOffsetRef.current) * EASE_STRENGTH;
+
+        setAngleOffset(currentOffsetRef.current);
+
+        // Continue animating if not fully settled
+        if (Math.abs(targetOffsetRef.current - currentOffsetRef.current) > 0.01) {
+          animationRef.current = requestAnimationFrame(animate);
+        }
       }
     };
 
@@ -72,6 +86,29 @@ export default function NumberArc({
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartRef.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
+    isDraggingRef.current = true;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!touchStartRef.current) return;
+    const currentX = e.touches[0].clientX;
+    const deltaX = currentX - touchStartRef.current.x;
+
+    // Map horizontal drag to rotation in real-time (left = negative, right = positive)
+    swipeOffsetRef.current = Math.max(-ROTATION_AMOUNT, Math.min(ROTATION_AMOUNT, deltaX * SWIPE_ROTATION_SCALE));
+  };
+
+  const handleTouchEnd = () => {
+    touchStartRef.current = null;
+    isDraggingRef.current = false;
+    swipeOffsetRef.current = 0;
+  };
+
   return (
     <div
       className="absolute left-1/2 -translate-x-1/2 w-0 h-0"
@@ -87,6 +124,9 @@ export default function NumberArc({
         }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       />
       {numbers.map((num, i) => {
         const t = (i - centerIndex) / centerIndex;
