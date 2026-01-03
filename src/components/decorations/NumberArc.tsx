@@ -16,10 +16,10 @@ type NumberArcProps = {
   fontScale?: number;
 };
 
-const ROTATION_AMOUNT = 30; // degrees to rotate on hover
+const ROTATION_AMOUNT = 50; // degrees to rotate on hover
 const EASE_STRENGTH = 0.12; // spring easing (0.1-0.15 recommended)
 const SWIPE_THRESHOLD = 50; // minimum swipe distance in px
-const SWIPE_ROTATION_SCALE = 0.3; // degrees per pixel of swipe
+const SWIPE_ROTATION_SCALE = 0.5; // degrees per pixel of swipe
 
 export default function NumberArc({
   radiusX,
