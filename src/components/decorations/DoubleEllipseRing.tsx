@@ -17,7 +17,7 @@ export default function DoubleEllipseRing({
     <div
   className="pointer-events-none fixed left-1/2 double-ellipse-ring"
   style={{
-    top: "clamp(-1000px, -52vw, -280px)",
+    top: "clamp(-820px, -52vw, -280px)",
     width: "clamp(400px, 70vw, 1100px)",
     height: "clamp(400px, 70vw, 980px)",
     transform: "translateX(-50%)",

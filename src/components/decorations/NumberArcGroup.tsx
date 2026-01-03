@@ -70,7 +70,7 @@ export default function NumberArcGroup() {
         value={time.minutes}
         max={60}
         count={getArcCount(width, "minutes")}
-        radiusX="clamp(200px, 30vw, 5000px)"
+        radiusX="clamp(200px, 30vw, 490px)"
         radiusY="clamp(150px, 22vw, 220px)"
         arcRotation={0}
         maxAngle={90}

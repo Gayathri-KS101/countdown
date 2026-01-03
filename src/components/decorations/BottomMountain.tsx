@@ -30,7 +30,7 @@ export default function BottomMountain() {
           bottom: 0;
           transform: translateX(-50%) translateY(0%);
           width: 100vw;
-          max-width: 100vw;
+          max-width: none;
           height: clamp(420px, 45vw, 720px);
           z-index: 15;
           filter: drop-shadow(0px -24px 50.9px rgba(0,0,0,0.24));
