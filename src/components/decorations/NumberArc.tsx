@@ -36,6 +36,7 @@ export default function NumberArc({
 }: NumberArcProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [angleOffset, setAngleOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const animationRef = useRef<number | null>(null);
   const targetOffsetRef = useRef(0);
   const currentOffsetRef = useRef(0);
@@ -71,7 +72,7 @@ export default function NumberArc({
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
-  }, [isHovered]);
+  }, [isHovered, isDragging]);
 
   const centerIndex = Math.floor(count / 2);
   const numbers = Array.from({ length: count }, (_, i) => {
@@ -92,6 +93,7 @@ export default function NumberArc({
       y: e.touches[0].clientY,
     };
     isDraggingRef.current = true;
+    setIsDragging(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -106,6 +108,7 @@ export default function NumberArc({
   const handleTouchEnd = () => {
     touchStartRef.current = null;
     isDraggingRef.current = false;
+    setIsDragging(false);
     swipeOffsetRef.current = 0;
   };
 
