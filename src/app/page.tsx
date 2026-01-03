@@ -5,10 +5,12 @@ import DoubleEllipseRing from "@/components/decorations/DoubleEllipseRing";
 import BottomMountain from "@/components/decorations/BottomMountain";
 import InventoTitle from "@/components/hero/InventoTitle";
 import Birds from "@/components/decorations/Birds";
+import PageBackground from "@/components/decorations/PageBackground";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden">
+      <PageBackground />
       {/* Background decoration (behind everything) */}
       <DoubleEllipseRing width={620} height={620} zIndex={1} />
 
