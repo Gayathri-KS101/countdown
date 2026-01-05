@@ -63,7 +63,7 @@ export default function BottomMountain() {
         /* ===== LARGE SCREENS ===== */
         @media (min-width: 1024px) {
           .bottom-mountain {
-            transform: translateX(-50%) translateY(22%);
+            transform: translateX(-50%) translateY(20%);
           }
         }
         @media (max-width: 375px) and (max-height: 670px) {

@@ -29,7 +29,7 @@ export default function InventoTitle() {
         }
 
         .invento-title.loaded {
-          transform: translateX(-50%) translateY(30px);
+          transform: translateX(-50%) translateY(0px);
           opacity: 1;
         }
 
@@ -50,14 +50,14 @@ export default function InventoTitle() {
         /* 📱 VERY SMALL PHONES (iPhone SE) */
         @media (max-width: 376px) {
           .invento-title {
-            bottom: 200px; /* ⬅️ predictable */
+            bottom: 150px; /* ⬅️ predictable */
           }
         }
 
         /* 📱 NORMAL MOBILES */
         @media (min-width: 377px) and (max-width: 640px) {
           .invento-title {
-            bottom: 195px;
+            bottom: 180px;
           }
         }
       `}</style>
