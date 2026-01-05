@@ -29,7 +29,7 @@ export default function InventoTitle() {
         }
 
         .invento-title.loaded {
-          transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(30px);
           opacity: 1;
         }
 
