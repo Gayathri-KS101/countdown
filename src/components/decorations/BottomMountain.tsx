@@ -7,7 +7,7 @@ export default function BottomMountain() {
     <div className="bottom-mountain pointer-events-none absolute left-1/2">
       {/* Desktop image */}
       <Image
-        src="/mountain.svg"
+        src="/desktop.webp"
         alt="Mountain background"
         fill
         priority
@@ -16,7 +16,7 @@ export default function BottomMountain() {
 
       {/* Mobile image */}
       <Image
-        src="/mountain-mobile.svg"
+        src="/mobile.webp"
         alt="Mountain background mobile"
         fill
         priority
@@ -47,7 +47,7 @@ export default function BottomMountain() {
             width: 100vw; /* ⬅️ still full width */
             height: 654.45px;
             bottom: 0;
-            transform: translateX(calc(-50% + 0px)) translateY(18%);
+            transform: translateX(calc(-50% + 0px)) translateY(25%);
             filter: drop-shadow(0px -27px 51.9px rgba(0,0,0,0.24));
           }
 
