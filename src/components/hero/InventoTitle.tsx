@@ -37,11 +37,7 @@ export default function InventoTitle() {
           font-size: clamp(44px, 14vw, 140px);
           line-height: 1.1;
           letter-spacing: -0.05em;
-          background: linear-gradient(
-            180deg,
-            #C51D28 20.57%,
-            #FFFFFF 70.71%
-          );
+          background: #C51D28;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;

@@ -7,7 +7,7 @@ export default function BottomMountain() {
     <div className="bottom-mountain pointer-events-none absolute left-1/2">
       {/* Desktop image */}
       <Image
-        src="/desktop.webp"
+        src="/mountains@2x@2x (1).png"
         alt="Mountain background"
         fill
         priority
@@ -16,7 +16,7 @@ export default function BottomMountain() {
 
       {/* Mobile image */}
       <Image
-        src="/mobile.webp"
+        src="/mob mount.png"
         alt="Mountain background mobile"
         fill
         priority
@@ -28,7 +28,7 @@ export default function BottomMountain() {
         .bottom-mountain {
           left: 50%;
           bottom: 0;
-          transform: translateX(-50%) translateY(0%);
+          transform: translateX(-50%) translateY(30%);
           width: 100vw;
           max-width: none;
           height: clamp(420px, 45vw, 720px);
