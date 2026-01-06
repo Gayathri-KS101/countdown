@@ -46,14 +46,14 @@ export default function InventoTitle() {
         /* 📱 VERY SMALL PHONES (iPhone SE) */
         @media (max-width: 376px) {
           .invento-title {
-            bottom: 200px; /* ⬅️ predictable */
+            bottom: 160px; /* ⬅️ predictable */
           }
         }
 
         /* 📱 NORMAL MOBILES */
         @media (min-width: 377px) and (max-width: 640px) {
           .invento-title {
-            bottom: 220px;
+            bottom: 160px;
           }
         }
       `}</style>
