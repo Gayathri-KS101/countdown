@@ -15,7 +15,7 @@ export default function Home() {
       <DoubleEllipseRing width={620} height={620} zIndex={1} />
 
       {/* Hero section */}
-      <section className="relative min-h-screen z-10">
+      <section className="relative h-screen lg:min-h-screen z-10">
         <TopRedSemicircle />
         <TopGradientTrapezoid />
         <NumberArcGroup />
