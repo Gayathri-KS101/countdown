@@ -9,7 +9,7 @@ import PageBackground from "@/components/decorations/PageBackground";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative h-screen lg:min-h-screen overflow-hidden">
       <PageBackground />
       {/* Background decoration (behind everything) */}
       <DoubleEllipseRing width={620} height={620} zIndex={1} />
