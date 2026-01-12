@@ -35,14 +35,14 @@ const PricingCard: React.FC<PricingCardProps> = ({
             priority
             className="object-cover rounded-2xl"
         />
-        <div className="relative z-10">
-            <h3 className="text-2xl font-bold mb-4 font-akira">{title}</h3>
+        <div className="relative pl-3 z-10">
+            <h3 className={`text-2xl font-bold mb-4 font-akira flex justify-center`}>{title}</h3>
 
             <div className="pb-3">
                 <div className="flex gap-2">
                     <div className="relative inline-block">
                       {/* Text */}
-                      <span className="text-4xl font-akira tracking-wider">
+                      <span className="text-4xl font-akira opacity-90 tracking-wider">
                         {oldPrice}
                       </span>
 
@@ -58,8 +58,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
                         className="rotate-10"
                     />
                 </div>
-                <div className="pl-26 flex justify-center">
-                    <div className={`text-4xl font-akira ${highlight ? "bg-linear-to-r from-[#ffffff] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]": ""}`}>{price}</div>
+                <div className="px-3 flex justify-end">
+                    <div className={`text-4xl font-akira ${highlight ? "bg-linear-to-r from-[#ffffff] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]": ""}`}>₹{price}</div>
                 </div>
             </div>
 
@@ -67,13 +67,13 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
             <ul className={`space-y-3 text-md font-bold max-w-76 font-urbanist text-white mb-6`}>
                 {features.map((item, i) => (
-                <li key={i} className="flex gap-2"><div>•</div> {item}</li>
+                <li key={i} className="flex gap-2"><div className="opacity-65 text-[14px]">•</div> {item}</li>
                 ))}
             </ul>
 
             {/* Button */}
             <div className="flex w-full justify-center">
-              <button className=" bg-(--color-button) px-2 font-akira hover:bg-red-700 transition py-3 rounded-xl font-bold">
+              <button className={` ${highlight ? "px-5 py-4" : "px-3 py-3"} bg-(--color-button) font-akira hover:bg-red-700 transition rounded-xl font-bold`}>
                 {buttonText}
               </button>
             </div>
