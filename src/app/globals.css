@@ -16,6 +16,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Urbanist';
+  src: url('/Urbanist-VariableFont_wght.ttf') format('ttf');
+  font-weight: bold;
+  font-display: swap;
+}
+
+.font-urbanist {
+  font-family: 'Urbanist', sans-serif;
+}
+
 .font-amanojaku {
   font-family: "Amanojaku Demo", sans-serif;
 }
@@ -27,6 +38,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-text: #C51D28;
+  --color-button: #ff0000 ;
+  --font-urbanist: "Urbanist", sans-serif;
+
+  --box-shadow: 0px 0px 26.8px 0px #C20C19;
 }
 
 @theme inline {
