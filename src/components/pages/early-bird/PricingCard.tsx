@@ -22,6 +22,11 @@ const PricingCard: React.FC<PricingCardProps> = ({
   buttonText,
   highlight = false,
 }) => {
+  const handleRedirect = () => {
+    window.location.href =
+      "https://app.makemypass.com/event/early-bird";
+  };
+
   return (
     <div
       className={`relative text-white rounded-2xl px-3 py-4 ${
@@ -91,6 +96,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
         <div className="flex w-full justify-center">
           <button
+            onClick={handleRedirect}
             className={`${
               highlight ? "px-5 py-4" : "px-3 py-3"
             } bg-(--color-button) font-akira hover:bg-red-700 transition rounded-xl font-bold`}
