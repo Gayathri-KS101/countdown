@@ -66,6 +66,22 @@ export default function BottomMountain() {
             transform: translateX(-50%) translateY(20%);
           }
         }
+
+        /* ===== SHORT DESKTOPS (height < 840px) - Remove gap ===== */
+        @media (min-width: 1024px) and (max-height: 839px) {
+          .bottom-mountain {
+            transform: translateX(-50%) translateY(20%);
+            bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+          
+          .bottom-mountain .mountain-desktop,
+          .bottom-mountain .mountain-mobile {
+            object-position: bottom;
+          }
+        }
+
         @media (max-width: 375px) and (max-height: 670px) {
         .bottom-mountain {
             height: 360px;

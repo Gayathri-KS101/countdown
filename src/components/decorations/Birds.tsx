@@ -5,10 +5,10 @@ import Image from "next/image";
 export default function Birds() {
   return (
     <div
-      className="pointer-events-none absolute"
+      className="pointer-events-none absolute birds-container"
       style={{
-        left: "clamp(12px, 4vw, 80px)",    // ⬅️ moved LEFT
-        top: "clamp(300px, 48vh, 480px)",  // ⬆️ moved UP
+        right: "clamp(240px, 38vw, 480px)",    // ⬅️ moved RIGHT
+        top: "clamp(400px, 60vh, 620px)",  // ⬆️ moved UP
         width: "clamp(120px, 20vw, 256px)",
         zIndex: 12,
       }}
@@ -20,6 +20,21 @@ export default function Birds() {
         height={144}
         className="w-full h-auto object-contain"
       />
+      <style>{`
+        /* Mobile adjustments - move birds to the right and up */
+        @media (max-width: 376px) {
+          .birds-container {
+            right: clamp(60px, 12vw, 200px) !important;
+            top: clamp(340px, 53vh, 560px) !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .birds-container {
+            right: clamp(60px, 12vw, 200px) !important;
+            top: clamp(260px, 45vh, 480px) !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
