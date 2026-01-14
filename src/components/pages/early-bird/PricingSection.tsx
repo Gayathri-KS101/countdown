@@ -17,7 +17,7 @@ const PricingSection = () => {
           buttonText="BOOK DAY2"
           heading="Live Concert: FEJO"
           features={[
-            "Avail any workshops worth ₹500 for free",
+            "Avail any one workshop worth ₹500 for free",
             "Job Fair Access",
             "Talk Session & Tech Expos",
             "Natya (Cultural Night)",
@@ -32,7 +32,7 @@ const PricingSection = () => {
           highlight
           heading="Live Concert: FEJO + HARICHARAN"
           features={[
-            "Avail any workshops worth ₹500 for free",
+            "Avail any one workshop worth ₹500 for free",
             "Job Fair Access",
             "Talk Session & Tech Expos",
             "Natya + Taksati",
@@ -46,7 +46,7 @@ const PricingSection = () => {
           buttonText="BOOK DAY3"
           heading="Live Concert: HARICHARAN"
           features={[
-            "Avail any workshops worth ₹500 for free",
+            "Avail any one workshop worth ₹500 for free",
             "Job Fair Access",
             "Talk Session & Tech Expos",
             "Taksati (Closing Cultural Event)",
