@@ -62,13 +62,7 @@
 html,
 body {
     height: 100%;
-}
-
-@media (min-width: 1024px) {
-    html,
-    body {
-        overflow: auto;
-    }
+    overscroll-behavior-y: none;
 }
 
 @keyframes fadeIn {

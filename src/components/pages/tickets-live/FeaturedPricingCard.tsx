@@ -100,7 +100,7 @@ const FeaturedPricingCard: React.FC<FeaturedPricingCardProps> = ({
 
       {highlight && (
         <div className="absolute -bottom-9 inset-x-0 flex justify-center -z-1">
-          <div className="text-black font-akira border-2 rounded-lg border-(--color-text) py-2 px-3">
+          <div className="text-white font-akira border-2 rounded-lg border-(--color-text) py-2 px-3">
             BEST VALUE PASS
           </div>
         </div>
