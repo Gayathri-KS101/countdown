@@ -23,7 +23,7 @@ const FeaturedPricingCard: React.FC<FeaturedPricingCardProps> = ({
   highlight = false,
 }) => {
   const handleRedirect = () => {
-    window.location.href = "https://app.makemypass.com/event/day-pass";
+    window.location.href = "https://makemypass.com/event/day-pass";
   };
 
   return (
