@@ -5,17 +5,19 @@ import Link from "next/link";
 
 export default function ActionButton() {
   return (
-    <div
-      className="
-    fixed z-20 pointer-events-auto
-    inset-x-0 mx-auto
+    <>
+      <div
+        className="
+    absolute z-20 pointer-events-auto
+    left-1/2 -translate-x-1/2
     flex items-center justify-center gap-2
     top-[clamp(460px,60vh,680px)]
 md:top-[clamp(500px,62vh,720px)]
 lg:top-[clamp(580px,65vh,780px)]
+action-button-container
 
   "
-    >
+      >
       <Image
         src="/left.svg"
         alt="Left decoration"
@@ -55,6 +57,15 @@ py-[clamp(8px,1.4vh,12px)]
         priority
         className="w-[clamp(50px,5vw,80px)] h-auto"
       />
-    </div>
+      </div>
+      <style>{`
+        /* iPhone SE adjustments */
+        @media (max-width: 376px) and (max-height: 668px) {
+          .action-button-container {
+            top: clamp(400px, 52vh, 450px) !important;
+          }
+        }
+      `}</style>
+    </>
   );
 }
