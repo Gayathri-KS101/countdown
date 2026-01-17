@@ -1,27 +1,27 @@
-"use client";
-
-import PageBackground from "@/components/decorations/PageBackground";
-import DayPassPricingSection from "@/components/pages/day-pass/DayPassPricingSection";
-import dynamic from "next/dynamic";
-
-const FallingLeaves = dynamic(
-  () => import("@/components/pages/day-pass/FallingLeaves"),
-  { ssr: false },
-);
+import TicketsLivePricingRow1 from "@/components/pages/tickets-live/TicketsLivePricingRow1";
+import TicketsLivePricingRow2 from "@/components/pages/tickets-live/TicketsLivePricingRow2";
 
 export default function Home() {
   return (
     <div
-      className="relative h-full bg-cover bg-center bg-no-repeat bg-[url('/event/mobilebg.svg')]
-    lg:bg-[url('/event/eventbg.svg')] lg:flex flex-col justify-center items-center lg:min-h-screen overflow-y-auto py-6"
+      className="
+        relative
+        min-h-screen
+        bg-cover bg-center bg-no-repeat
+        bg-[url('/bg-tickets-page.jpg')]
+        overflow-y-auto
+        py-6
+      "
     >
-      <FallingLeaves />
-
-      <div className="relative z-20">
-        <h1 className="text-center text-6xl md:text-9xl bg-linear-to-r from-[#ffffff] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)] font-akira lg:-mb-6">
+      <div className="flex flex-col items-center relative z-20">
+        <h1 className="text-center text-6xl md:text-9xl text-(--color-text) font-akira lg:-mb-6">
           TICKETS LIVE NOW
         </h1>
-        <DayPassPricingSection />
+
+        <div className="flex flex-col gap-24 py-12">
+          <TicketsLivePricingRow1 />
+          <TicketsLivePricingRow2 />
+        </div>
       </div>
     </div>
   );

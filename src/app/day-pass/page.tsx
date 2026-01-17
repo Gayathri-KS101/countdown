@@ -17,8 +17,8 @@ export default function Home() {
     >
       <FallingLeaves />
 
-      <div className="relative z-20">
-        <h1 className="text-center text-6xl md:text-9xl bg-linear-to-r from-[#ffffff] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)] font-akira lg:-mb-6">
+      <div className="flex flex-col relative z-20 gap-12">
+        <h1 className="text-center text-6xl md:text-9xl text-(--color-text) font-akira lg:-mb-6">
           DAY PASS
         </h1>
         <DayPassPricingSection />

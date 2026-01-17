@@ -7,6 +7,7 @@ interface PricingCardProps {
   title: string;
   price: number;
   heading: string;
+  heading2?: string;
   features: Feature[];
   buttonText: string;
   highlight?: boolean;
@@ -16,6 +17,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   title,
   price,
   heading,
+  heading2,
   features,
   buttonText,
   highlight = false,
@@ -26,19 +28,11 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
   return (
     <div
-      className={`relative text-white rounded-2xl px-3 py-4 ${
+      className={`relative text-black rounded-2xl px-3 py-4 ${
         highlight ? "shadow-(--box-shadow) mb-7" : "shadow-none"
       }`}
     >
-      <Image
-        src="/Card-bg.svg"
-        alt="Page background"
-        fill
-        priority
-        className="object-cover rounded-2xl z-0"
-      />
-
-      <div className="absolute inset-0 bg-white opacity-10 rounded-2xl z-[1]" />
+      <div className="absolute inset-0 bg-white rounded-2xl z-[1]" />
 
       <div className="relative pl-3 z-10">
         <h3 className="text-2xl font-bold mb-4 font-akira flex justify-center">
@@ -50,7 +44,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
             <div
               className={`text-4xl font-akira ${
                 highlight
-                  ? "bg-linear-to-r from-[#ffffff] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
+                  ? "bg-linear-to-r from-[#000000] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
                   : ""
               }`}
             >
@@ -59,15 +53,12 @@ const PricingCard: React.FC<PricingCardProps> = ({
           </div>
         </div>
 
-        <h2
-          className={`${
-            highlight ? "max-w-71" : "max-w-75"
-          } font-akira text-xl mb-2`}
-        >
-          {heading}
+        <h2 className="max-w-80 font-akira text-xl mb-2 flex flex-col">
+          <span>{heading}</span>
+          <span>{heading2}</span>
         </h2>
 
-        <ul className="space-y-3 text-md font-bold max-w-76 font-urbanist text-white mb-6">
+        <ul className="space-y-3 text-md font-bold max-w-76 font-urbanist text-black mb-6">
           {features.map((item, i) => (
             <li key={i} className="flex gap-2">
               <div className="opacity-65 text-[14px]">•</div> {item}
@@ -80,7 +71,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
             onClick={handleRedirect}
             className={`${
               highlight ? "px-5 py-4" : "px-3 py-3"
-            } bg-(--color-button) font-akira hover:bg-red-700 transition rounded-xl font-bold`}
+            } bg-(--color-button) font-akira hover:bg-red-700 transition rounded-xl font-bold text-white`}
           >
             {buttonText}
           </button>

@@ -28,7 +28,8 @@ const DayPassPricingSection = () => {
           price={1999}
           buttonText="BOOK BUNDLE"
           highlight
-          heading="Live Concert: FEJO + HARICHARAN"
+          heading="Live Concert:"
+          heading2="FEJO + HARICHARAN"
           features={[
             "Avail any one workshop worth ₹500 for free",
             "Job Fair Access",
