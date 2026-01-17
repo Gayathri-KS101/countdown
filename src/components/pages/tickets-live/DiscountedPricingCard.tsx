@@ -23,7 +23,7 @@ const DiscountedPricingCard: React.FC<DiscountedPricingCardProps> = ({
   highlight = false,
 }) => {
   const handleRedirect = () => {
-    window.location.href = "https://makemypass.com/event/day-pass";
+    window.location.href = "https://makemypass.com/event/after-hours";
   };
 
   return (
