@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 type Feature = string;
@@ -24,19 +23,11 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
   return (
     <div
-      className={`relative text-white rounded-2xl px-3 py-4 ${
+      className={`relative text-black rounded-2xl px-3 py-4 ${
         highlight ? "shadow-(--box-shadow) mb-7" : "shadow-none"
       }`}
     >
-      <Image
-        src="/Card-bg.svg"
-        alt="Page background"
-        fill
-        priority
-        className="object-cover rounded-2xl z-0"
-      />
-
-      <div className="absolute inset-0 bg-white opacity-10 rounded-2xl z-[1]" />
+      <div className="absolute inset-0 bg-white rounded-2xl z-[1]" />
 
       <div className="relative pl-3 z-10 gap-6">
         <h3 className="text-2xl font-bold mb-4 font-akira flex justify-center h-15 items-center">
@@ -48,7 +39,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
             <div
               className={`text-4xl font-akira ${
                 highlight
-                  ? "bg-linear-to-r from-[#ffffff] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
+                  ? "bg-linear-to-r from-[#000000] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
                   : ""
               }`}
             >
@@ -59,7 +50,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
         <div>
           {features.map((item, i) => (
-            <h2 key={i} className="max-w-80 font-akira text-xl mb-2">
+            <h2 key={i} className="max-w-80 font-akira text-xl mb-2 text-black">
               {item}
             </h2>
           ))}
@@ -70,7 +61,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
             onClick={handleRedirect}
             className={`${
               highlight ? "px-5 py-4" : "px-3 py-3"
-            } bg-(--color-button) font-akira hover:bg-red-700 transition rounded-xl font-bold`}
+            } bg-(--color-button) font-akira hover:bg-red-700 transition rounded-xl font-bold text-white`}
           >
             {buttonText}
           </button>
@@ -79,7 +70,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
       {highlight && (
         <div className="absolute -bottom-9 inset-x-0 flex justify-center -z-1">
-          <div className="text-black font-akira border-2 rounded-lg border-(--color-text) py-2 px-3">
+          <div className="text-white font-akira border-2 rounded-lg border-(--color-text) py-2 px-3">
             BEST VALUE PASS
           </div>
         </div>

@@ -6,6 +6,7 @@ type Feature = string;
 interface PricingCardProps {
   title: string;
   price: number;
+  oldPrice?: number;
   heading: string;
   heading2?: string;
   features: Feature[];
@@ -16,6 +17,7 @@ interface PricingCardProps {
 const PricingCard: React.FC<PricingCardProps> = ({
   title,
   price,
+  oldPrice,
   heading,
   heading2,
   features,
@@ -40,17 +42,49 @@ const PricingCard: React.FC<PricingCardProps> = ({
         </h3>
 
         <div className="pb-3">
-          <div className="px-3 flex justify-center">
-            <div
-              className={`text-4xl font-akira ${
-                highlight
-                  ? "bg-linear-to-r from-[#000000] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
-                  : ""
-              }`}
-            >
-              ₹{price}
+          {oldPrice ? (
+            <>
+              <div className="flex gap-2 h-15 items-center">
+                <div className="relative inline-block">
+                  <span className="text-4xl font-akira opacity-90 tracking-wider">
+                    ₹{oldPrice}
+                  </span>
+                  <div className="absolute top-1/2 left-0 w-full h-1 bg-(--color-text) rotate-[-10deg]" />
+                </div>
+                <Image
+                  src={"/arrow.svg"}
+                  alt="arrow"
+                  width={60}
+                  height={60}
+                  priority
+                  className="rotate-10"
+                />
+              </div>
+              <div className="px-3 flex justify-end">
+                <div
+                  className={`text-4xl font-akira ${
+                    highlight
+                      ? "bg-linear-to-r from-[#000000] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
+                      : ""
+                  }`}
+                >
+                  ₹{price}
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="px-3 flex justify-center">
+              <div
+                className={`text-4xl font-akira ${
+                  highlight
+                    ? "bg-linear-to-r from-[#000000] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
+                    : ""
+                }`}
+              >
+                ₹{price}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <h2 className="max-w-80 font-akira text-xl mb-2 flex flex-col">

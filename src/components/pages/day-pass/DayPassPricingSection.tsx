@@ -25,6 +25,7 @@ const DayPassPricingSection = () => {
 
         <PricingCard
           title="BUNDLE PASS"
+          oldPrice={2498}
           price={1999}
           buttonText="BOOK BUNDLE"
           highlight
