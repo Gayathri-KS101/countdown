@@ -16,7 +16,6 @@ lg:top-[clamp(580px,65vh,780px)]
 
   "
     >
-
       <Image
         src="/left.svg"
         alt="Left decoration"
@@ -26,7 +25,7 @@ lg:top-[clamp(580px,65vh,780px)]
         className="w-[clamp(50px,5vw,80px)] h-auto"
       />
 
-      <Link href="/early-bird">
+      <Link href="/day-pass">
         <button
           className="
     font-akira font-bold text-white
@@ -44,10 +43,8 @@ py-[clamp(8px,1.4vh,12px)]
     active:scale-95
   "
         >
-          EARLY BIRD
+          DAY PASS
         </button>
-
-
       </Link>
 
       <Image
