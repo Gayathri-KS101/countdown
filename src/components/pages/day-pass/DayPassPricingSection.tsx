@@ -1,19 +1,18 @@
-"use client"
+"use client";
 import PricingCard from "./PricingCard";
 import { motion } from "motion/react";
 
-const PricingSection = () => {
+const DayPassPricingSection = () => {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 80 }}   
-      animate={{ opacity: 1, y: 0 }}    
+      initial={{ opacity: 0, y: 80 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
       <div className="flex flex-col lg:flex-row justify-center gap-10 items-center">
         <PricingCard
           title="DAY 2 PASS"
-          oldPrice={1199}
-          price={899}
+          price={1199}
           buttonText="BOOK DAY2"
           heading="Live Concert: FEJO"
           features={[
@@ -26,8 +25,7 @@ const PricingSection = () => {
 
         <PricingCard
           title="BUNDLE PASS"
-          oldPrice={1999}
-          price={1799}
+          price={1999}
           buttonText="BOOK BUNDLE"
           highlight
           heading="Live Concert: FEJO + HARICHARAN"
@@ -41,8 +39,7 @@ const PricingSection = () => {
 
         <PricingCard
           title="DAY 3 PASS"
-          oldPrice={1299}
-          price={999}
+          price={1299}
           buttonText="BOOK DAY3"
           heading="Live Concert: HARICHARAN"
           features={[
@@ -57,4 +54,4 @@ const PricingSection = () => {
   );
 };
 
-export default PricingSection;
+export default DayPassPricingSection;

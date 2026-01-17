@@ -5,7 +5,6 @@ type Feature = string;
 
 interface PricingCardProps {
   title: string;
-  oldPrice: number;
   price: number;
   heading: string;
   features: Feature[];
@@ -15,7 +14,6 @@ interface PricingCardProps {
 
 const PricingCard: React.FC<PricingCardProps> = ({
   title,
-  oldPrice,
   price,
   heading,
   features,
@@ -23,8 +21,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   highlight = false,
 }) => {
   const handleRedirect = () => {
-    window.location.href =
-      "https://app.makemypass.com/event/early-bird";
+    window.location.href = "https://app.makemypass.com/event/early-bird";
   };
 
   return (
@@ -49,23 +46,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         </h3>
 
         <div className="pb-3">
-          <div className="flex gap-2">
-            <div className="relative inline-block">
-              <span className="text-4xl font-akira opacity-90 tracking-wider">
-                {oldPrice}
-              </span>
-              <div className="absolute top-1/2 left-0 w-full h-1 bg-(--color-text) rotate-[-10deg]" />
-            </div>
-            <Image
-              src={"/arrow.svg"}
-              alt="arrow"
-              width={60}
-              height={60}
-              priority
-              className="rotate-10"
-            />
-          </div>
-          <div className="px-3 flex justify-end">
+          <div className="px-3 flex justify-center">
             <div
               className={`text-4xl font-akira ${
                 highlight
