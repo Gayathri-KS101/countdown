@@ -19,7 +19,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
   highlight = false,
 }) => {
   const handleRedirect = () => {
-    window.location.href = "https://app.makemypass.com/event/early-bird";
+    window.location.href = "https://makemypass.com/event/after-hours";
   };
 
   return (
