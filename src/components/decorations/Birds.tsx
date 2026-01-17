@@ -8,7 +8,7 @@ export default function Birds() {
       className="pointer-events-none absolute birds-container"
       style={{
         right: "clamp(240px, 38vw, 480px)",    // ⬅️ moved RIGHT
-        top: "clamp(400px, 60vh, 620px)",  // ⬆️ moved UP
+        top: "clamp(430px, 58vh, 650px)",  // ⬆️ moved UP
         width: "clamp(120px, 20vw, 256px)",
         zIndex: 12,
       }}
@@ -29,10 +29,12 @@ export default function Birds() {
           }
         }
         @media (max-width: 768px) {
-          .birds-container {
-            right: clamp(60px, 12vw, 200px) !important;
-            top: clamp(260px, 45vh, 480px) !important;
-          }
+  .birds-container {
+    right: clamp(80px, 18vw, 220px) !important;
+    top: clamp(300px, 55vh, 600px) !important;
+  }
+}
+
         }
       `}</style>
     </div>
