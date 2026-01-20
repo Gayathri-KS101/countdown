@@ -35,9 +35,9 @@ const PricingCard: React.FC<PricingCardProps> = ({
         </h3>
 
         <div className="pb-7">
-          <div className="px-3 flex justify-center h-10 items-center">
+          <div className="px-3 flex pl-16 lg:pl-15 h-10">
             <div
-              className={`text-4xl font-akira ${
+              className={`text-4xl font-akira pl-10 pr-8${
                 highlight
                   ? "bg-linear-to-r from-[#000000] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
                   : ""

@@ -17,9 +17,24 @@ export default function Home() {
     >
       <FallingLeaves />
       <div className="flex flex-col items-center relative z-20">
-        <h1 className="text-center text-6xl md:text-9xl max-w-6xl text-(--color-text) font-akira lg:-mb-6">
-          TICKETS LIVE NOW
-        </h1>
+       <h1 className="
+    text-center
+    text-3xl         
+    sm:text-4xl
+    md:text-6xl
+    lg:text-6xl
+
+    max-w-[20rem]      
+    sm:max-w-sm
+    md:max-w-2xl
+    lg:max-w-4xl
+
+    text-(--color-text)
+    font-akira
+    leading-tight
+  ">
+    REGISTRATIONS ARE LIVE
+  </h1>
 
         <div className="flex flex-col gap-24 py-12">
           <TicketsLivePricingRow1 />

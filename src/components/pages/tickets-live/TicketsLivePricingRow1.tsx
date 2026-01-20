@@ -19,7 +19,7 @@ const TicketsLivePricingRow1 = () => {
           features={[
             "Your day 2 access includes :",
             "Access to Fejo’s live performance",
-            "Complimentary entry to Natya",
+            "Entry to Natya",
           ]}
         />
 
@@ -33,7 +33,7 @@ const TicketsLivePricingRow1 = () => {
           features={[
             "Entry valid for 10 individuals",
             "Access to Fejo’s live performance",
-            "Complimentary entry to Natya",
+            "Entry to Natya",
           ]}
         />
 
@@ -46,7 +46,7 @@ const TicketsLivePricingRow1 = () => {
           features={[
             "Entry valid for 5 individuals",
             "Access to Fejo’s live performance",
-            "Complimentary entry to Natya",
+            "Entry to Natya",
           ]}
         />
       </div>

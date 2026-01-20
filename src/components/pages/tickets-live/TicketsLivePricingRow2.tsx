@@ -19,7 +19,7 @@ const TicketsLivePricingRow2 = () => {
           features={[
             "Your day 3 access includes:",
             "Access to Haricharan’s live performance",
-            "Complimentary entry to Taksati",
+            "Entry to Taksati",
           ]}
         />
 
@@ -33,7 +33,7 @@ const TicketsLivePricingRow2 = () => {
           features={[
             "Entry valid for 10 individuals",
             "Access to Haricharan’s live performance",
-            "Complimentary entry to Taksati",
+            "Entry to Taksati",
           ]}
         />
 
@@ -46,7 +46,7 @@ const TicketsLivePricingRow2 = () => {
           features={[
             "Entry valid for 5 individuals",
             "Access to Haricharan’s live performance",
-            "Complimentary entry to Taksati",
+            "Entry to Taksati",
           ]}
         />
       </div>

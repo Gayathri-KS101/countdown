@@ -61,7 +61,7 @@ const FeaturedPricingCard: React.FC<FeaturedPricingCardProps> = ({
             <div
               className={`text-4xl font-akira ${
                 highlight
-                  ? "bg-linear-to-r from-[#000000] to-(--color-text) bg-clip-text text-transparent drop-shadow-[0_6px_10px_rgba(0,0,0,0.4)]"
+                  ? "bg-linear-to-r from-[#000000] to-(--color-text) bg-clip-text text-transparent "
                   : ""
               }`}
             >
